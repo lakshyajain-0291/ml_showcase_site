@@ -1,0 +1,129 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    
+    --primary: 210 100% 56%;
+    --primary-foreground: 0 0% 98%;
+    
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+    
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    
+    --accent: 210 40% 96%;
+    --accent-foreground: 222 47% 11%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 222 47% 11%;
+    
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222 20% 12%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 25% 16%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 25% 14%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 100% 56%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 217 19% 22%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 19% 18%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 217 86% 18%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 19% 27%;
+    --input: 217 19% 27%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+  }
+}
+
+.section-title {
+  @apply text-3xl md:text-4xl font-bold relative pb-2 inline-block;
+}
+
+.section-title::after {
+  content: "";
+  @apply absolute bottom-0 left-0 w-2/3 h-1 bg-theme-blue;
+}
+
+.gradient-text {
+  @apply bg-gradient-to-r from-theme-blue to-blue-400 bg-clip-text text-transparent;
+}
+
+.paper-shadow {
+  @apply shadow-lg hover:shadow-xl transition-shadow duration-300;
+}
+
+.code-block {
+  @apply p-4 bg-gray-100 dark:bg-theme-darkGray rounded-md font-mono text-sm overflow-x-auto;
+}
+
+.highlight {
+  @apply px-1.5 py-0.5 bg-blue-100 dark:bg-theme-lightBlue text-blue-700 dark:text-theme-blue rounded;
+}
+
+/* Add glassmorphism effect for cards */
+.glass-card {
+  @apply bg-white/90 dark:bg-theme-gray/90 backdrop-blur-lg border border-gray-200 dark:border-white/10 shadow-lg;
+}
+
+/* Glow effect for buttons */
+.glow-effect {
+  @apply relative overflow-hidden transition-all duration-300;
+}
+
+.glow-effect::before {
+  content: '';
+  @apply absolute inset-0 bg-gradient-to-r from-blue-500/30 to-indigo-500/30 opacity-0 transition-opacity duration-300;
+}
+
+.glow-effect:hover::before {
+  @apply opacity-100;
+}
