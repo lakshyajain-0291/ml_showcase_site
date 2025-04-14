@@ -89,7 +89,7 @@ const TeamSection = () => {
     {
       name: "Aradhya Mahajan",
       role: "ML Developer & Backend Engineer",
-      image: "../../public/photos/aradhya.jpg",
+      image: "../../public/aradhya.jpg",
       bio: "Second Year Undergrad, enthusiastic about Backend development, Blockchain and Cryptography.",
       links: {
         email: "b23cs1088@iitj.ac.in",
@@ -100,7 +100,7 @@ const TeamSection = () => {
     {
       name: "Arpan Jain",
       role: "Model Trainer",
-      image: "../../public/photos/arpan.png?fit=crop&w=800&h=800",
+      image: "../../public/arpan.png?fit=crop&w=800&h=800",
       bio: "Second Year Undergrad, passionate about Daru, Ganja, CP, Aradhya Mahajan",
       links: {
         email: "b23cs1089@iitj.ac.in",
@@ -111,7 +111,7 @@ const TeamSection = () => {
     {
       name: "Divyansh Maheshwari",
       role: "AI Workflow Engineer",
-      image: "../../public/photos/divyansh.png?fit=crop&w=800&h=800",
+      image: "../../public/divyansh.png?fit=crop&w=800&h=800",
       bio: "Second Year Undergrad, and an aspiring back end developer. Passionate about AI and its applications.",
       links: {
         email: "b23cm1015@iitj.ac.in",
@@ -122,7 +122,7 @@ const TeamSection = () => {
     {
       name: "Mohit Meemrauth",
       role: "ML Contributor",
-      image: "../../public/photos/mohit.png?fit=crop&w=800&h=800",
+      image: "../../public/mohit.png?fit=crop&w=800&h=800",
       bio: "Second Year Undergrad at IIT Jodhpur with a strong interest in backend development and DevOps",
       links: {
         email: "b23cs1038@iitj.ac.in",
@@ -133,7 +133,7 @@ const TeamSection = () => {
     {
       name: "Lakshya Jain",
       role: "Full-Stack & ML Contributor",
-      image: "../../public/photos/lakshya.jpg?fit=crop&w=800&h=800",
+      image: "../../public/lakshya.jpg?fit=crop&w=800&h=800",
       bio: "A student in the Class of 2027 at IIT Jodhpur in the CSE branch, with a keen and growing interest in technology and entrepreneurship.",
       links: {
         email: "b23cs1032@iitj.ac.in",
@@ -144,7 +144,7 @@ const TeamSection = () => {
     {
       name: "Vyom Shah",
       role: "ML Contributor & Documentation",
-      image: "../../public/photos/vyom.png?fit=crop&w=800&h=800",
+      image: "../../public/vyom.png?fit=crop&w=800&h=800",
       bio: "Second Year Undergrad, passionate about Quantitative Finance, Data Science and Machine Learning.",
       links: {
         email: "b23cm1058@iitj.ac.in",
