@@ -18,7 +18,6 @@ const Index = () => {
       <MethodologySection />
       <VideoSection />
       <TeamSection />
-      <BibTexSection />
     </Layout>
   );
 };

@@ -59,7 +59,7 @@ const TeamMember: React.FC<TeamMemberProps> = ({
             </div>
             
             <div className="mb-4">
-              <span className="text-xs font-medium text-gray-500 uppercase">Expertise</span>
+              <span className="text-xs font-medium text-gray-500 uppercase">Learnings</span>
               <div className="flex flex-wrap gap-2 mt-1">
                 {expertise.map((item, index) => (
                   <span 
@@ -72,12 +72,17 @@ const TeamMember: React.FC<TeamMemberProps> = ({
               </div>
             </div>
             
+            {/* <div>
+                <span className="text-xs font-medium text-gray-500 uppercase">Roll No</span>
+                <p className="text-sm font-medium">{publications}</p>
+            </div> */}
+
             <div className="flex items-center justify-between">
               <div>
-                <span className="text-xs font-medium text-gray-500 uppercase">Publications</span>
+                <span className="text-xs font-medium text-gray-500 uppercase">Age</span>
                 <p className="text-sm font-medium">{publications}</p>
               </div>
-              
+
               <div className="flex space-x-3">
                 {links.email && (
                   <a 
@@ -133,88 +138,87 @@ const TeamMember: React.FC<TeamMemberProps> = ({
 const Team = () => {
   const teamMembers: TeamMemberProps[] = [
     {
-      name: "Dr. John Smith",
-      role: "Principal Investigator",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fit=crop&w=800&h=800",
-      bio: "Dr. Smith leads the IntelliVision research project, bringing extensive experience in computer vision and machine learning. His research focuses on developing advanced visual understanding systems with real-world applications.",
-      publications: 45,
-      expertise: ["Computer Vision", "Deep Learning", "Image Retrieval", "Transformer Models"],
-      education: "Ph.D. in Computer Science, Stanford University",
-      links: {
-        email: "john.smith@example.edu",
-        linkedin: "https://linkedin.com/in/johnsmith",
-        github: "https://github.com/johnsmith",
-        website: "https://johnsmith.example.edu"
-      }
-    },
-    {
-      name: "Emily Johnson",
-      role: "Lead Researcher",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?fit=crop&w=800&h=800",
-      bio: "Emily specializes in transformer architectures and self-supervised learning techniques. Her work on hierarchical attention mechanisms has been instrumental in improving the performance of our image retrieval system.",
-      publications: 23,
-      expertise: ["Transformer Models", "Self-Supervised Learning", "Attention Mechanisms"],
-      education: "Ph.D. in Machine Learning, MIT",
-      links: {
-        email: "emily.johnson@example.edu",
-        linkedin: "https://linkedin.com/in/emilyjohnson",
-        github: "https://github.com/emilyjohnson"
-      }
-    },
-    {
-      name: "Robert Williams",
-      role: "Senior Engineer",
-      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?fit=crop&w=800&h=800",
-      bio: "Robert is responsible for the system architecture and efficient implementation of our retrieval engine. His expertise in distributed computing has enabled the scalability of our approach to handle large-scale image databases.",
-      publications: 17,
-      expertise: ["System Architecture", "Distributed Computing", "Efficient ML Implementation"],
-      education: "M.S. in Computer Engineering, UC Berkeley",
-      links: {
-        email: "robert.williams@example.edu",
-        github: "https://github.com/robertwilliams",
-        website: "https://robertwilliams.example.edu"
-      }
-    },
-    {
-      name: "Sarah Davis",
-      role: "Ph.D. Candidate",
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?fit=crop&w=800&h=800",
-      bio: "Sarah's research focuses on visual attention mechanisms and multimodal learning. She has developed novel approaches to integrate contextual information across modalities, enhancing the semantic understanding of our system.",
-      publications: 8,
-      expertise: ["Visual Attention", "Multimodal Learning", "Feature Extraction"],
-      education: "M.S. in Computer Science, Carnegie Mellon University",
-      links: {
-        email: "sarah.davis@example.edu",
-        linkedin: "https://linkedin.com/in/sarahdavis",
-        github: "https://github.com/sarahdavis"
-      }
-    },
-    {
-      name: "Michael Chen",
-      role: "Research Scientist",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?fit=crop&w=800&h=800",
-      bio: "Michael specializes in contrastive learning and metric learning techniques. His work has significantly improved the discriminative power of the feature representations used in our retrieval system.",
+      name: "Aradhya Mahajan",
+      role: "ML Developer & Backened Engineer",
+      image: "../../photos/aradhya.jpg?fit=crop&w=800&h=800",
+      bio: "Aradhya developed the complete backend infrastructure for capturing live network packets, enabling real-time intrusion detection in the NIDS project. Additionally, he implemented the Nearest Centroid Classifier, contributing to the exploration of lightweight yet effective classification techniques.",
       publications: 19,
-      expertise: ["Contrastive Learning", "Metric Learning", "Feature Representation"],
-      education: "Ph.D. in Artificial Intelligence, University of Toronto",
+      expertise: ["Live Packet Capture Backend", "Nearest Centroid Classifier", "Network Data Handling", "Backend Integration"],
+      education: "B. Tech in Computer Science, IIT Jodhpur",
       links: {
-        email: "michael.chen@example.edu",
-        github: "https://github.com/michaelchen",
-        linkedin: "https://linkedin.com/in/michaelchen"
+        email: "b23cs1088@iitj.ac.in",
+        linkedin: "https://www.linkedin.com/in/aradhya-mahajan/",
+        github: "https://github.com/aradhya2708"
       }
     },
     {
-      name: "David Brown",
-      role: "Research Engineer",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?fit=crop&w=800&h=800",
-      bio: "David focuses on efficient implementation of deep learning models and optimization techniques. His work has been essential in making our models computationally efficient while maintaining high accuracy.",
-      publications: 12,
-      expertise: ["Model Optimization", "Efficient Inference", "Quantization"],
-      education: "M.S. in Computer Science, ETH Zurich",
+      name: "Arpan Jain",
+      role: "Model Trainer",
+      image: "../../photos/arpan.png",
+      bio: "Arpan played a pivotal role in implementing the Single Layer Perceptron (SLP) and Multi-Layer Perceptron (MLP) models for the NIDS project. Through his dedicated learning and hands-on implementation, he significantly contributed to the model development, enhancing its performance.",
+      publications: 21,
+      expertise: ["Neural Networks", "Single Layer Perceptron (SLP)", "Multi-Layer Perceptron (MLP)"],
+      education: "B. Tech in Computer Science, IIT Jodhpur",
       links: {
-        email: "david.brown@example.edu",
-        github: "https://github.com/davidbrown",
-        website: "https://davidbrown.example.edu"
+        email: "b23cs1089@iitj.ac.in",
+        linkedin: "https://www.linkedin.com/in/arpan2048/",
+        github: "https://github.com/bot2048"
+      }
+    },
+    {
+      name: "Divyansh Maheshwari",
+      role: "AI Workflow Engineer",
+      image: "../../photos/divyansh.png",
+      bio: "Divyansh served as the primary AI lead for the NIDS project, driving the machine learning pipeline from data preprocessing to model training. He was responsible for thorough data cleaning and exploratory data analysis (EDA), and implemented both the Decision Tree and Random Forest models.",
+      publications: 19,
+      expertise: ["Data Cleaning & Feature Engineering", "Exploratory Data Analysis (EDA)", "Decision Tree Implementation", "Random Forest Training"],
+      education: "B. Tech in Artifical Intelligence and Data Science, IIT Jodhpur",
+      links: {
+        email: "b23cm1015@iitj.ac.in",
+        linkedin: "https://www.linkedin.com/in/divyansh-maheshwari/",
+        github: "https://github.com/divyansh1010x"
+      }
+    },
+    {
+      name: "Mohit Meemrauth",
+      role: "ML Implementation Associate",
+      image: "../../photos/mohit.png?fit=crop&w=800&h=800",
+      bio: "Mohit contributed to the NIDS project by implementing the Linear Discriminant Analysis (LDA) classifier and assisting in the feature extraction process. His involvement in identifying and engineering relevant attributes helped streamline the dataset for more effective model training. Mohit's hands-on work with LDA added a valuable statistical perspective to the model evaluation pipeline.",
+      publications: 19,
+      expertise: ["Linear Discriminant Analysis (LDA)", "Feature Extraction", "Statistical Analysis"],
+      education: "B. Tech in Computer Science, IIT Jodhpur",
+      links: {
+        email: "b23cs1038@iitj.ac.in",
+        linkedin: "https://www.linkedin.com/in/mohit-meemrauth-40772828b/",
+        github: "https://github.com/Mohi1038"
+      }
+    },
+    {
+      name: "Lakshya Jain",
+      role: "Full-Stack & ML Contributor",
+      image: "../../photos/lakshya.jpg?fit=crop&w=800&h=800",
+      bio: "Lakshya contributed to both the web development and machine learning components of the NIDS project. He developed the project’s website, ensuring a user-friendly interface and seamless accessibility. Additionally, he implemented the Naive Bayes classifier, enhancing the diversity of the evaluated models and supporting the comparative analysis.",
+      publications: 21,
+      expertise: ["Naive Bayes Implementation", "Model Evaluation Support", "Project Website Development"],
+      education: "B. Tech in Computer Science, IIT Jodhpur",
+      links: {
+        email: "b23cs1032@iitj.ac.in",
+        linkedin: "https://www.linkedin.com/in/lakshya-jain-5b565a284/",
+        github: "https://github.com/lakshyajain-0291"
+      }
+    },
+    {
+      name: "Vyom Shah",
+      role: "ML Contributor & Documentation",
+      image: "../../photos/vyom.png?fit=crop&w=800&h=800",
+      bio: "Vyom made key contributions to the NIDS project by implementing the Logistic Regression model and taking complete ownership of the project documentation. His work ensured both the technical depth and clarity of the report, making the project presentation-ready for academic evaluation.",
+      publications: 21,
+      expertise: ["Logistic Regression", "Project Documentation", "Technical Writing"],
+      education: "B. Tech in Artifical Intelligence and Data Science, IIT Jodhpur",
+      links: {
+        email: "b23cm1058@iitj.ac.in",
+        linkedin: "https://www.linkedin.com/in/shah-vyom/",
+        github: "https://github.com/Vyom1111"
       }
     }
   ];
@@ -251,20 +255,15 @@ const Team = () => {
     <Layout>
       <div className="py-12 bg-theme-lightBlue/30">
         <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Research Team</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Team</h1>
           <p className="text-xl text-gray-700 max-w-3xl">
-            Meet the talented researchers behind the IntelliVision project.
+            Meet the talented people behind the NIDS project.
           </p>
         </div>
       </div>
       
       <div className="container mx-auto px-4 py-16">
-        <Tabs defaultValue="core" className="w-full">
-          <TabsList className="grid w-full grid-cols-2 mb-8">
-            <TabsTrigger value="core">Core Team</TabsTrigger>
-            <TabsTrigger value="collaborators">Collaborators & Acknowledgements</TabsTrigger>
-          </TabsList>
-          
+        <Tabs defaultValue="core" className="w-full">          
           <TabsContent value="core" className="animate-fade-in">
             <div className="grid grid-cols-1 gap-8 mb-12">
               {teamMembers.map((member, index) => (

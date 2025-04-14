@@ -10,8 +10,8 @@ const BibTexSection = () => {
   const { toast } = useToast();
   const [copied, setCopied] = useState(false);
   
-  const bibTexContent = `@inproceedings{smith2023intellivision,
-  title={IntelliVision: A Novel Transformer-based Approach to Content-based Image Retrieval},
+  const bibTexContent = `@inproceedings{smith2023NIDS,
+  title={NIDS: A Novel Transformer-based Approach to Content-based Image Retrieval},
   author={Smith, John and Johnson, Emily and Williams, Robert and Davis, Sarah},
   booktitle={Proceedings of the International Conference on Computer Vision (ICCV)},
   pages={3215--3224},

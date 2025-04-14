@@ -87,48 +87,69 @@ const TeamMember: React.FC<TeamMemberProps> = ({ name, role, image, bio, links }
 const TeamSection = () => {
   const teamMembers: TeamMemberProps[] = [
     {
-      name: "Dr. John Smith",
-      role: "Principal Investigator",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fit=crop&w=800&h=800",
-      bio: "Expert in computer vision and machine learning with 10+ years of experience in developing state-of-the-art retrieval systems.",
+      name: "Aradhya Mahajan",
+      role: "ML Developer & Backend Engineer",
+      image: "../../public/photos/aradhya.jpg",
+      bio: "Second Year Undergrad, enthusiastic about Backend development, Blockchain and Cryptography.",
       links: {
-        email: "john.smith@example.edu",
-        linkedin: "https://linkedin.com/in/johnsmith",
-        github: "https://github.com/johnsmith",
-        website: "https://johnsmith.example.edu"
+        email: "b23cs1088@iitj.ac.in",
+        linkedin: "https://www.linkedin.com/in/aradhya-mahajan/",
+        github: "https://github.com/aradhya2708"
       }
     },
     {
-      name: "Emily Johnson",
-      role: "Lead Researcher",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?fit=crop&w=800&h=800",
-      bio: "Specializes in transformer architectures and self-supervised learning. Published 15+ papers in top-tier ML conferences.",
+      name: "Arpan Jain",
+      role: "Model Trainer",
+      image: "../../public/photos/arpan.png?fit=crop&w=800&h=800",
+      bio: "Second Year Undergrad, passionate about Daru, Ganja, CP, Aradhya Mahajan",
       links: {
-        email: "emily.johnson@example.edu",
-        linkedin: "https://linkedin.com/in/emilyjohnson",
-        github: "https://github.com/emilyjohnson"
+        email: "b23cs1089@iitj.ac.in",
+        linkedin: "https://www.linkedin.com/in/arpan2048/",
+        github: "https://github.com/bot2048"
       }
     },
     {
-      name: "Robert Williams",
-      role: "Senior Engineer",
-      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?fit=crop&w=800&h=800",
-      bio: "Systems architect focusing on efficient implementations of large-scale retrieval engines and distributed computing.",
+      name: "Divyansh Maheshwari",
+      role: "AI Workflow Engineer",
+      image: "../../public/photos/divyansh.png?fit=crop&w=800&h=800",
+      bio: "Second Year Undergrad, and an aspiring back end developer. Passionate about AI and its applications.",
       links: {
-        email: "robert.williams@example.edu",
-        github: "https://github.com/robertwilliams",
-        website: "https://robertwilliams.example.edu"
+        email: "b23cm1015@iitj.ac.in",
+        linkedin: "https://www.linkedin.com/in/divyansh-maheshwari/",
+        github: "https://github.com/divyansh1010x"
       }
     },
     {
-      name: "Sarah Davis",
-      role: "Ph.D. Candidate",
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?fit=crop&w=800&h=800",
-      bio: "Researcher in visual attention mechanisms and multimodal learning. Previously interned at Google Research.",
+      name: "Mohit Meemrauth",
+      role: "ML Contributor",
+      image: "../../public/photos/mohit.png?fit=crop&w=800&h=800",
+      bio: "Second Year Undergrad at IIT Jodhpur with a strong interest in backend development and DevOps",
       links: {
-        email: "sarah.davis@example.edu",
-        linkedin: "https://linkedin.com/in/sarahdavis",
-        github: "https://github.com/sarahdavis"
+        email: "b23cs1038@iitj.ac.in",
+        linkedin: "https://www.linkedin.com/in/mohit-meemrauth-40772828b/",
+        github: "https://github.com/Mohi1038"
+      }
+    },
+    {
+      name: "Lakshya Jain",
+      role: "Full-Stack & ML Contributor",
+      image: "../../public/photos/lakshya.jpg?fit=crop&w=800&h=800",
+      bio: "A student in the Class of 2027 at IIT Jodhpur in the CSE branch, with a keen and growing interest in technology and entrepreneurship.",
+      links: {
+        email: "b23cs1032@iitj.ac.in",
+        linkedin: "https://www.linkedin.com/in/lakshya-jain-5b565a284/",
+        github: "https://github.com/lakshyajain-0291"
+      }
+    },
+    {
+      name: "Vyom Shah",
+      role: "ML Contributor & Documentation",
+      image: "../../public/photos/vyom.png?fit=crop&w=800&h=800",
+      bio: "Second Year Undergrad, passionate about Quantitative Finance, Data Science and Machine Learning.",
+      links: {
+        email: "b23cm1058@iitj.ac.in",
+        linkedin: "https://www.linkedin.com/in/shah-vyom/",
+        github: "https://github.com/Vyom1111"
       }
     }
   ];
@@ -137,12 +158,12 @@ const TeamSection = () => {
     <section className="py-16 bg-gray-50" id="team">
       <div className="container mx-auto px-4">
         <SectionTitle 
-          title="Research Team" 
+          title="Our Team" 
           subtitle="Meet the people behind the project"
           alignment="center"
         />
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 justify-center place-items-center">
           {teamMembers.map((member, index) => (
             <TeamMember key={index} {...member} />
           ))}
@@ -153,28 +174,28 @@ const TeamSection = () => {
             <CardContent className="p-6 md:p-8">
               <h3 className="text-xl font-bold mb-4 text-theme-blue">Acknowledgements</h3>
               <p className="text-gray-700 mb-6">
-                This research was supported by grants from the National Science Foundation (NSF-1234567) and the University Research Foundation. We extend our gratitude to the following organizations and individuals for their support:
+                This research was performed as a course project in the Indian Institute of Technology, Jodhput (IITJ). We extend our gratitude to the following organizations and individuals for their support:
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="bg-gray-50 p-4 rounded-lg">
                   <h4 className="font-semibold mb-2">Computational Resources</h4>
                   <p className="text-sm text-gray-700">
-                    We acknowledge the University Computing Center for providing access to their high-performance computing clusters, which were essential for training our models.
+                    We utilized Google Colab for model training and experimentation. The access to free cloud-based GPUs provided an efficient and accessible platform for developing and testing our models.                  
                   </p>
                 </div>
                 
                 <div className="bg-gray-50 p-4 rounded-lg">
                   <h4 className="font-semibold mb-2">Dataset Access</h4>
                   <p className="text-sm text-gray-700">
-                    We thank the Visual Data Research Group for providing access to their proprietary dataset, which was crucial for the evaluation of our approach.
+                    The dataset used for the project was sourced from Kaggle, offering a rich resource that enabled us to develop and evaluate our network intrusion detection system.                  
                   </p>
                 </div>
                 
                 <div className="bg-gray-50 p-4 rounded-lg">
-                  <h4 className="font-semibold mb-2">Academic Collaborators</h4>
+                  <h4 className="font-semibold mb-2">Academic Support</h4>
                   <p className="text-sm text-gray-700">
-                    Special thanks to Dr. Michael Chen and Dr. David Brown for their valuable feedback and insightful discussions throughout the project.
+                    This research was completed as part of a course project. We thank our course instructor Prof. Anand Mishra for their insightful feedback, support, and encouragement during the development of the NIDS system.                  
                   </p>
                 </div>
               </div>

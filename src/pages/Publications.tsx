@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Search, FileText, ExternalLink, Download, Github } from "lucide-react";
 
-type PublicationType = "journal" | "conference" | "workshop" | "preprint" | "all";
+type PublicationType = "journal" | "conference" | "workshop" | "preprint" | "all" | "blockchain" | "development" | "Machine Learning" | "DevOps";
 
 interface Publication {
   title: string;
@@ -26,109 +26,86 @@ const Publications = () => {
   
   const publications: Publication[] = [
     {
-      title: "IntelliVision: A Novel Transformer-based Approach to Content-based Image Retrieval",
-      authors: "Smith, J., Johnson, E., Williams, R., Davis, S.",
-      venue: "International Conference on Computer Vision (ICCV)",
-      year: 2023,
-      type: "conference",
-      abstract: "We present IntelliVision, a novel approach to content-based image retrieval that leverages state-of-the-art transformer models for visual feature extraction. Our framework employs a hierarchical attention mechanism that enables the model to focus on salient regions while maintaining awareness of the overall image composition.",
-      link: "#",
-      pdf: "#",
-      code: "https://github.com/example/intellivision"
+      title: "NIDS: A Novel Transformer-based Approach to Content-based Image Retrieval",
+      authors: "Aradhya, Arpan, Divyansh, Mohit, Lakshya, Vyom",
+      venue: "PRML Project",
+      year: 2025,
+      type: "Machine Learning",
+      abstract: "We present NIDS, a novel machine learning-based approach to real-time network intrusion detection that leverages a diverse range of classification models for accurate and efficient threat identification.",
+      code: "https://github.com/example/NIDS"
     },
     {
-      title: "Hierarchical Attention Mechanisms for Improved Visual Feature Extraction",
-      authors: "Smith, J., Chen, M., Brown, D.",
-      venue: "Transactions on Pattern Analysis and Machine Intelligence",
-      year: 2023,
-      type: "journal",
-      abstract: "This paper presents a novel hierarchical attention mechanism for visual feature extraction. By operating at multiple scales, our approach can effectively capture both local details and global context. Experimental results demonstrate significant improvements in feature quality for downstream tasks.",
-      link: "#",
-      pdf: "#"
+      title: "MPV: Audio reactive Music Player And Visualizer",
+      authors: "Divyansh, Nithyan, Akshaya, Subhanshu",
+      venue: "Winter of Code",
+      year: 2025,
+      type: "development",
+      abstract: "An immersive visual system that responds to music through dynamic animations and evolving patterns. As the audio plays, the visuals shift in real time across different styles, creating a rich, responsive experience that enhances the way sound is perceived. Designed to blend motion, rhythm, and visual storytelling.",
+      code: "https://github.com/divyansh1010x/MPV"
     },
     {
-      title: "Efficient Indexing Structures for Large-Scale Image Retrieval",
-      authors: "Williams, R., Smith, J.",
-      venue: "European Conference on Computer Vision (ECCV)",
-      year: 2022,
-      type: "conference",
-      abstract: "We propose a novel indexing structure for efficient retrieval from large-scale image databases. Our approach combines hierarchical navigable small world graphs with feature compression techniques, achieving state-of-the-art performance in terms of both accuracy and query time.",
-      link: "#",
-      pdf: "#",
-      code: "https://github.com/example/efficient-indexing"
+      title: "GitCury: Your Ultimate Git Sidekick",
+      authors: "Lakshya",
+      venue: "Personal Project",
+      year: 2025,
+      type: "DevOps",
+      abstract: "GitCury is your ultimate Git sidekick! Built with Go, it automates your Git workflow with AI-powered commit messages, root folder filtering, alias-based commands, and CLI utilities that make Git operations a breeze. Whether you're managing a single repo or juggling multiple projects, GitCury has your back.",
+      code: "https://github.com/lakshyajain-0291/GitCury"
     },
     {
-      title: "Self-Supervised Pretraining for Image Retrieval Models",
-      authors: "Johnson, E., Davis, S., Smith, J.",
-      venue: "Neural Information Processing Systems (NeurIPS)",
-      year: 2022,
-      type: "conference",
-      abstract: "This paper introduces a self-supervised pretraining approach specifically designed for image retrieval tasks. By leveraging contrastive learning with carefully designed augmentation strategies, our method significantly improves the quality of learned representations without requiring labeled data.",
-      link: "#",
-      pdf: "#"
+      title: "LIBR: A moderated, censorship resilient digital forum",
+      authors: "Aradhya, Arpan, Lakshya, Devesh, Diwanshu",
+      venue: "Software Engineer Project",
+      year: 2025,
+      type: "development",
+      abstract: "LIBR is a Decentralized Forum designed to offer community control over forum content utilizing concepts of Distributed Hash Tables for Decentralization, Byzantine Consistent Broadcasts for Fault Tolerance and Natural Language Processing for Text Moderation. With a robust and fast core written in Go, Blockshare provides an intuitive CLI interface for a censorship resilient yet moderated digital forum",
+      code: "https://github.com/DALDA-IITJ/libr"
     },
     {
-      title: "Cross-Modal Retrieval with Visual-Semantic Alignment",
-      authors: "Davis, S., Johnson, E.",
-      venue: "Workshop on Multimodal Learning, ICLR",
-      year: 2023,
-      type: "workshop",
-      abstract: "We address the challenge of retrieving images using text queries and vice versa. Our approach aligns visual and textual representations in a shared embedding space using a novel attention-based fusion mechanism that preserves modality-specific information while enabling cross-modal retrieval.",
-      link: "#",
-      pdf: "#"
+      title: "Blockshare: A decentralized blockchain platform with C++ core and JS API layer",
+      authors: "Aradhya, Arpan, Yash, Prinyanshu",
+      venue: "DSA Project",
+      year: 2024,
+      type: "blockchain",
+      abstract: "BlockShare is a decentralized ledger and blockchain platform designed for running your own cryptocurrency in a local network environment. With a C++ core handling blockchain operations and a JavaScript-based API layer for client interactions, BlockShare provides a functional peer-to-peer network that supports transaction processing, balance management, and digital signature verification.",
+      code: "https://github.com/aradhya2708/blockshare"
     },
     {
-      title: "Adaptive Token Merging for Efficient Vision Transformers",
-      authors: "Chen, M., Smith, J., Brown, D.",
-      venue: "arXiv preprint",
-      year: 2023,
-      type: "preprint",
-      abstract: "This paper introduces Adaptive Token Merging (ATM), a technique to dynamically reduce the computational complexity of vision transformers. By identifying and merging similar patch tokens during inference, ATM achieves substantial speed improvements with minimal accuracy degradation.",
-      link: "#",
-      pdf: "#",
-      code: "https://github.com/example/adaptive-token-merging"
+      title: "Automated Whatsapp Messanger Platform",
+      authors: "Divyansh, Mohit, Madhav",
+      venue: "Design Credit Project",
+      year: 2025,
+      type: "development",
+      abstract: "A scalable, end-to-end platform designed to automate and personalize WhatsApp communication at scale. Combines an intuitive web interface with a robust backend to manage campaigns, segment audiences, and deliver scheduled messages tailored for workers, customers, and publishers. Built to empower businesses with consistent, intelligent outreach and streamlined engagement across user groups.",
+      code: "https://github.com/divyansh1010x/whatsapp_messenger"
     },
     {
-      title: "Query Refinement for Interactive Image Retrieval",
-      authors: "Brown, D., Williams, R.",
-      venue: "ACM Multimedia",
-      year: 2022,
-      type: "conference",
-      abstract: "We propose an interactive query refinement approach for image retrieval systems. By incorporating user feedback on retrieved results, our system progressively refines the query representation, leading to more accurate results over successive iterations.",
-      link: "#",
-      pdf: "#"
+      title: "Video Analysis of Virechan Procedure",
+      authors: "Vyom Shah, Ishan Shah",
+      venue: "Design Credit Project",
+      year: 2025,
+      type: "Machine Learning",
+      abstract: "This Project investigates a novel approach for video analysis in Ayurveda, focusing on the Virechan procedure in Panchkarma, which involves therapeutic vomiting after consuming large quantities of ghee. Working with videos provided by the Indian Institute of Ayurveda, we developed a model to automatically identify and analyze specific events in this procedure.",
+      code: "https://github.com/Vyom1111"
     },
     {
-      title: "Explainable Content-Based Image Retrieval via Attention Visualization",
-      authors: "Smith, J., Davis, S.",
-      venue: "IEEE Transactions on Multimedia",
-      year: 2023,
-      type: "journal",
-      abstract: "This paper addresses the black-box nature of deep learning-based image retrieval systems by developing techniques to visualize and explain retrieval decisions. By analyzing attention patterns and generating natural language explanations, our approach increases user trust and system transparency.",
-      link: "#",
-      pdf: "#"
+      title: "KDTreeImageClustering",
+      authors: "Mohit, Neeraj, Mayank, Reshma ,Nishu",
+      venue: "DSA Project",
+      year: 2024,
+      type: "development",
+      abstract: "We devloped a Hierarchical Image clustering pipeline in C++ by leveraging normalized RGB color histograms and multidimensional KD-Tree tree with lograrithmic-time nearest-neighbour search and recursive median splits, enabling real time clustering",
+      code: "https://github.com/Mohi1038/KDTreeImageClustering"
     },
     {
-      title: "Few-Shot Learning for Domain-Specific Image Retrieval",
-      authors: "Johnson, E., Chen, M.",
-      venue: "International Conference on Learning Representations (ICLR)",
-      year: 2022,
-      type: "conference",
-      abstract: "We present a few-shot learning approach for adapting image retrieval models to specialized domains with limited labeled data. Using meta-learning techniques, our method can quickly adapt to new domains while maintaining strong generalization performance.",
-      link: "#",
-      pdf: "#"
+      title: "Deployment Server",
+      authors: "Mohit, Shweta, Akhil",
+      venue: "Winter of Code",
+      year: 2025,
+      type: "DevOps",
+      abstract: "Engineered a Github Probot App which automate cloud infrastructure provisioning and deployment using Terraform and shell scripts , streamlining DevOps and eliminating manual SSH-based VM provisioning by dynamic credential validation and automated deployment via Github trigger issues",
+      code: "https://github.com/Mohi1038/DeploymentServer"
     },
-    {
-      title: "Continual Learning for Evolving Image Retrieval Systems",
-      authors: "Davis, S., Smith, J.",
-      venue: "arXiv preprint",
-      year: 2023,
-      type: "preprint",
-      abstract: "This paper addresses the challenge of incrementally updating image retrieval systems with new data without catastrophic forgetting of previously learned concepts. Our approach combines experience replay with parameter regularization to achieve stable performance over time.",
-      link: "#",
-      pdf: "#",
-      code: "https://github.com/example/continual-retrieval"
-    }
   ];
   
   const filteredPublications = publications
@@ -142,19 +119,19 @@ const Publications = () => {
   
   const publicationCounts = {
     all: publications.length,
-    journal: publications.filter(p => p.type === "journal").length,
-    conference: publications.filter(p => p.type === "conference").length,
-    workshop: publications.filter(p => p.type === "workshop").length,
-    preprint: publications.filter(p => p.type === "preprint").length
+    journal: publications.filter(p => p.type === "development").length,
+    conference: publications.filter(p => p.type === "DevOps").length,
+    workshop: publications.filter(p => p.type === "blockchain").length,
+    preprint: publications.filter(p => p.type === "Machine Learning").length
   };
 
   return (
     <Layout>
       <div className="py-12 bg-theme-lightBlue/30">
         <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Publications</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Work</h1>
           <p className="text-xl text-gray-700 max-w-3xl">
-            Our research contributions to content-based image retrieval and computer vision.
+            See the other works of our team members in other fields.
           </p>
         </div>
       </div>
@@ -170,32 +147,32 @@ const Publications = () => {
               All ({publicationCounts.all})
             </Button>
             <Button 
-              variant={filter === "journal" ? "default" : "outline"} 
-              onClick={() => setFilter("journal")}
-              className={filter === "journal" ? "bg-theme-blue hover:bg-theme-darkBlue" : ""}
+              variant={filter === "development" ? "default" : "outline"} 
+              onClick={() => setFilter("development")}
+              className={filter === "development" ? "bg-theme-blue hover:bg-theme-darkBlue" : ""}
             >
-              Journals ({publicationCounts.journal})
+              Development ({publicationCounts.journal})
             </Button>
             <Button 
-              variant={filter === "conference" ? "default" : "outline"} 
-              onClick={() => setFilter("conference")}
-              className={filter === "conference" ? "bg-theme-blue hover:bg-theme-darkBlue" : ""}
+              variant={filter === "DevOps" ? "default" : "outline"} 
+              onClick={() => setFilter("DevOps")}
+              className={filter === "DevOps" ? "bg-theme-blue hover:bg-theme-darkBlue" : ""}
             >
-              Conferences ({publicationCounts.conference})
+              DevOps ({publicationCounts.conference})
             </Button>
             <Button 
-              variant={filter === "workshop" ? "default" : "outline"} 
-              onClick={() => setFilter("workshop")}
-              className={filter === "workshop" ? "bg-theme-blue hover:bg-theme-darkBlue" : ""}
+              variant={filter === "blockchain" ? "default" : "outline"} 
+              onClick={() => setFilter("blockchain")}
+              className={filter === "blockchain" ? "bg-theme-blue hover:bg-theme-darkBlue" : ""}
             >
-              Workshops ({publicationCounts.workshop})
+              Blockchain ({publicationCounts.workshop})
             </Button>
             <Button 
-              variant={filter === "preprint" ? "default" : "outline"} 
-              onClick={() => setFilter("preprint")}
-              className={filter === "preprint" ? "bg-theme-blue hover:bg-theme-darkBlue" : ""}
+              variant={filter === "Machine Learning" ? "default" : "outline"} 
+              onClick={() => setFilter("Machine Learning")}
+              className={filter === "Machine Learning" ? "bg-theme-blue hover:bg-theme-darkBlue" : ""}
             >
-              Preprints ({publicationCounts.preprint})
+              Machine Learning ({publicationCounts.preprint})
             </Button>
           </div>
           
@@ -226,14 +203,14 @@ const Publications = () => {
                       <span className="inline-block px-2 py-1 text-xs font-medium rounded-full mb-2 capitalize" 
                         style={{ 
                           backgroundColor: 
-                            pub.type === "journal" ? "rgba(56, 189, 248, 0.1)" : 
-                            pub.type === "conference" ? "rgba(52, 211, 153, 0.1)" : 
-                            pub.type === "workshop" ? "rgba(249, 168, 212, 0.1)" :
+                            pub.type === "Machine Learning" ? "rgba(56, 189, 248, 0.1)" : 
+                            pub.type === "DevOps" ? "rgba(52, 211, 153, 0.1)" : 
+                            pub.type === "development" ? "rgba(249, 168, 212, 0.1)" :
                             "rgba(253, 230, 138, 0.1)",
                           color: 
-                            pub.type === "journal" ? "rgb(14, 165, 233)" : 
-                            pub.type === "conference" ? "rgb(16, 185, 129)" : 
-                            pub.type === "workshop" ? "rgb(236, 72, 153)" :
+                            pub.type === "Machine Learning" ? "rgb(14, 165, 233)" : 
+                            pub.type === "DevOps" ? "rgb(16, 185, 129)" : 
+                            pub.type === "development" ? "rgb(236, 72, 153)" :
                             "rgb(234, 179, 8)"
                         }}
                       >
@@ -285,47 +262,6 @@ const Publications = () => {
             ))
           )}
         </div>
-        
-        <Card className="paper-shadow mt-12">
-          <CardContent className="p-6 md:p-8">
-            <h3 className="text-xl font-bold mb-4 text-theme-blue">Citation Information</h3>
-            
-            <p className="text-gray-700 mb-6">
-              If you use our research in your work, please cite our key publications using the BibTeX entries provided below:
-            </p>
-            
-            <div className="code-block overflow-x-auto text-xs md:text-sm whitespace-pre-wrap mb-6">
-{`@inproceedings{smith2023intellivision,
-  title={IntelliVision: A Novel Transformer-based Approach to Content-based Image Retrieval},
-  author={Smith, John and Johnson, Emily and Williams, Robert and Davis, Sarah},
-  booktitle={Proceedings of the International Conference on Computer Vision (ICCV)},
-  pages={3215--3224},
-  year={2023},
-  organization={IEEE}
-}
-
-@article{smith2023hierarchical,
-  title={Hierarchical Attention Mechanisms for Improved Visual Feature Extraction},
-  author={Smith, John and Chen, Michael and Brown, David},
-  journal={Transactions on Pattern Analysis and Machine Intelligence},
-  volume={45},
-  number={8},
-  pages={9376--9390},
-  year={2023},
-  publisher={IEEE}
-}`}
-            </div>
-            
-            <div className="bg-theme-lightBlue p-4 rounded-lg">
-              <h4 className="font-medium text-theme-darkBlue mb-2">Preprint Access</h4>
-              <p className="text-sm text-gray-700">
-                For papers behind paywalls, you can find preprint versions of all our publications on 
-                <a href="#" className="text-theme-blue hover:underline ml-1">our lab's website</a> or on 
-                <a href="#" className="text-theme-blue hover:underline ml-1">arXiv</a>.
-              </p>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </Layout>
   );

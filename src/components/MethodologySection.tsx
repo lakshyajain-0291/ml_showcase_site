@@ -26,32 +26,40 @@ const MethodologySection = () => {
                 <CardContent className="p-6 md:p-8">
                   <h3 className="text-xl font-bold mb-4 text-theme-blue">Model Architecture</h3>
                   <p className="text-gray-700 mb-6">
-                    Our architecture leverages a dual-stream transformer approach that processes visual and semantic information in parallel pathways:
+                    Our intrusion detection framework employs a layered model evaluation strategy, aligning statistical and neural classifiers for robust threat recognition across diverse network scenarios.
                   </p>
                   
                   <div className="mb-6">
-                    <h4 className="font-semibold mb-2">Visual Encoder</h4>
+                    <h4 className="font-semibold mb-2">Modular Pipeline Design</h4>
                     <p className="text-gray-700 mb-3">
-                      The visual encoder divides input images into 16×16 patches and processes them through 12 transformer layers with 12 attention heads each. This design enables the model to capture both local features and global context:
+                    The architecture is modular, consisting of:
                     </p>
                     <ul className="space-y-2 text-gray-700 pl-5">
-                      <li className="list-disc">Patch embedding layer (768 dimensions)</li>
-                      <li className="list-disc">Positional encoding to retain spatial information</li>
-                      <li className="list-disc">Multi-head self-attention modules with 768-dimensional queries, keys, and values</li>
-                      <li className="list-disc">Layer normalization and residual connections</li>
+                      <li className="list-disc">Data Ingestion Module – Captures live or batch network packets.</li>
+                      <li className="list-disc">Feature Engineering Block – Extracts relevant attributes such as protocol types, byte counts, connection flags, etc.</li>
+                      <li className="list-disc">Model Integration Engine – Seamlessly incorporates the top-performing model for real-time intrusion detection and classification.</li>
                     </ul>
+                  </div>
+
+                  <div className="mb-6">
+                    <h4 className="font-semibold mb-2">Dataset Refinement and Contribution</h4>
+                    <p className="text-gray-700 mb-3">
+                      The dataset provided initially had discrepancies between the train and test sets, which impacted the model's generalizability. To address this, we combined both the training and testing data, re-uploaded it to Kaggle for broader accessibility, and subsequently split it into proper training, validation, and test sets. This step ensured more consistent model evaluation and provided a balanced dataset for future researchers.                    
+                    </p>
+                  </div>
+
+                  <div className="mb-6">
+                    <h4 className="font-semibold mb-2">Evaluated Models</h4>
+                    <p className="text-gray-700 mb-3">
+                      We experimented with a diverse set of machine learning algorithms, including linear models, probabilistic classifiers, decision-based methods, and neural networks. This included Logistic Regression, Nearest Centroid Classifier, Naive Bayes, Decision Tree, Random Forest, Linear Discriminant Analysis (LDA), Single Layer Perceptron, and Multi-Layer Perceptron. Each model was rigorously evaluated using standard performance metrics, and the best-performing one was deployed in the final intrusion detection pipeline for real-time prediction.
+                    </p>
                   </div>
                   
                   <div className="mb-6">
-                    <h4 className="font-semibold mb-2">Hierarchical Attention</h4>
+                    <h4 className="font-semibold mb-2">Final Deployment</h4>
                     <p className="text-gray-700">
-                      We introduce a hierarchical attention mechanism that operates at multiple scales, allowing the model to focus on salient regions while maintaining awareness of the overall image composition. This mechanism consists of:
+                      The highest-performing model was encapsulated as a .pkl artifact and integrated into the live monitoring layer, enabling real-time prediction over active network traffic streams.
                     </p>
-                    <ul className="space-y-2 text-gray-700 pl-5 mt-2">
-                      <li className="list-disc">Local attention modules (patch-level)</li>
-                      <li className="list-disc">Region attention modules (intermediate-level)</li>
-                      <li className="list-disc">Global attention module (image-level)</li>
-                    </ul>
                   </div>
                 </CardContent>
               </Card>
@@ -61,23 +69,23 @@ const MethodologySection = () => {
                   <h3 className="text-xl font-bold mb-4 text-theme-blue">Feature Extraction</h3>
                   <div className="space-y-4">
                     <div className="bg-gray-50 p-4 rounded-lg">
-                      <h4 className="font-semibold mb-2">Deep Visual Features</h4>
+                      <h4 className="font-semibold mb-2">Statistical Feature Selection</h4>
                       <p className="text-sm text-gray-700">
-                        Our model extracts a 1024-dimensional feature vector that captures high-level semantic concepts and spatial relationships between objects in the image.
+                        We computed a correlation matrix between all features and the target labels. Features with a correlation coefficient above 0.3 were selected for model training, ensuring relevance and reducing dimensionality.
                       </p>
                     </div>
                     
                     <div className="bg-gray-50 p-4 rounded-lg">
-                      <h4 className="font-semibold mb-2">Multi-scale Representation</h4>
+                      <h4 className="font-semibold mb-2">Refined Input Representation</h4>
                       <p className="text-sm text-gray-700">
-                        By combining features from different layers, we create a multi-scale representation that captures both fine-grained details and high-level semantics.
+                        By focusing on strongly correlated attributes, we enhanced the signal-to-noise ratio in the data, resulting in improved model interpretability and performance.                      
                       </p>
                     </div>
                     
                     <div className="bg-gray-50 p-4 rounded-lg">
-                      <h4 className="font-semibold mb-2">Contrastive Learning</h4>
+                      <h4 className="font-semibold mb-2">Lightweight and Scalable</h4>
                       <p className="text-sm text-gray-700">
-                        We employ contrastive learning to ensure that similar images have similar feature representations, improving retrieval accuracy.
+                      This approach avoids complex embeddings and heavy preprocessing, making it suitable for real-time applications with limited computational resources.
                       </p>
                     </div>
                     
@@ -86,24 +94,21 @@ const MethodologySection = () => {
                       <div className="code-block relative">
                         <pre>
 {`# Feature extraction pseudocode
-def extract_features(image):
-    # Split image into patches
-    patches = split_into_patches(image, size=16)
+def extract_relevant_features(dataframe, target_column):
+    # Compute correlation matrix
+    correlation_matrix = dataframe.corr()
     
-    # Extract patch embeddings
-    embeddings = patch_embedding_layer(patches)
+    # Get absolute correlations with the target
+    target_correlation = correlation_matrix[target_column].abs()
     
-    # Add positional encodings
-    embeddings = add_positional_encoding(embeddings)
+    # Select features with correlation > 0.3
+    selected_features = target_correlation[target_correlation > 0.3].index.tolist()
     
-    # Process through transformer layers
-    for layer in transformer_layers:
-        embeddings = layer(embeddings)
-        
-    # Global pooling for final representation
-    global_feature = mean_pooling(embeddings)
+    # Drop the target column if included
+    selected_features = [feat for feat in selected_features if feat != target_column]
     
-    return global_feature`}
+    return dataframe[selected_features]
+`}
                         </pre>
                       </div>
                     </div>
@@ -120,39 +125,20 @@ def extract_features(image):
                   <h3 className="text-xl font-bold mb-4 text-theme-blue">Training Protocol</h3>
                   <div className="space-y-4">
                     <div>
-                      <h4 className="font-semibold mb-2">Dataset</h4>
-                      <p className="text-gray-700">
-                        The model was trained on a curated dataset consisting of:
-                      </p>
+                      <h4 className="font-semibold mb-2">Dataset Preparation</h4>
                       <ul className="space-y-1 text-gray-700 pl-5 mt-2">
-                        <li className="list-disc">1.2M images from ImageNet</li>
-                        <li className="list-disc">300K images from MSCOCO</li>
-                        <li className="list-disc">200K images from Open Images</li>
+                        <li className="list-disc">Merged the train and test splits to ensure uniformity.</li>
+                        <li className="list-disc">Uploaded the merged version on Kaggle for broader accessibility.</li>
+                        <li className="list-disc">Re-split the data into training, validation, and test sets to ensure reliable evaluation.</li>
                       </ul>
                     </div>
                     
                     <div>
-                      <h4 className="font-semibold mb-2">Loss Function</h4>
-                      <p className="text-gray-700">
-                        We employ a combination of:
-                      </p>
+                      <h4 className="font-semibold mb-2">Training Environment</h4>
                       <ul className="space-y-1 text-gray-700 pl-5 mt-2">
-                        <li className="list-disc">InfoNCE contrastive loss</li>
-                        <li className="list-disc">Triplet loss with hard negative mining</li>
-                        <li className="list-disc">Auxiliary classification loss</li>
-                      </ul>
-                    </div>
-                    
-                    <div>
-                      <h4 className="font-semibold mb-2">Optimization</h4>
-                      <p className="text-gray-700">
-                        AdamW optimizer with:
-                      </p>
-                      <ul className="space-y-1 text-gray-700 pl-5 mt-2">
-                        <li className="list-disc">Learning rate: 1e-4 with cosine decay</li>
-                        <li className="list-disc">Weight decay: 0.05</li>
-                        <li className="list-disc">Batch size: 256 (distributed across 8 GPUs)</li>
-                        <li className="list-disc">Training epochs: 100</li>
+                        <li className="list-disc">All training was performed using Google Colab.</li>
+                        <li className="list-disc">Code was implemented in Python using libraries like Pandas, NumPy, Matplotlib, and Scikit-learn.</li>
+                        <li className="list-disc">No heavy data augmentation or GPU-accelerated deep learning was involved.</li>
                       </ul>
                     </div>
                   </div>
@@ -161,59 +147,46 @@ def extract_features(image):
               
               <Card className="paper-shadow">
                 <CardContent className="p-6 md:p-8">
-                  <h3 className="text-xl font-bold mb-4 text-theme-blue">Data Augmentation</h3>
+                  <h3 className="text-xl font-bold mb-4 text-theme-blue">Data Preprocessing</h3>
                   <p className="text-gray-700 mb-4">
-                    To improve model robustness and generalization, we applied extensive data augmentation techniques:
+                    To ensure the model performed reliably across varied intrusion patterns, we applied a focused set of preprocessing techniques:
                   </p>
                   
                   <div className="grid grid-cols-2 gap-4">
                     <div className="bg-gray-50 p-3 rounded-lg">
-                      <h5 className="font-medium text-sm mb-2">Geometric</h5>
+                      <h5 className="font-medium text-sm mb-2">Dataset Refinement</h5>
                       <ul className="text-xs text-gray-700 space-y-1">
-                        <li>• Random resized crops</li>
-                        <li>• Random horizontal flips</li>
-                        <li>• Random rotations (±10°)</li>
-                        <li>• Random perspective</li>
+                        <li>• Train-Test Merge</li>
+                        <li>• Uploaded to Kaggle </li>
+                        <li>• Then resplit</li>
                       </ul>
                     </div>
                     
                     <div className="bg-gray-50 p-3 rounded-lg">
-                      <h5 className="font-medium text-sm mb-2">Color</h5>
+                      <h5 className="font-medium text-sm mb-2">Data cleaning</h5>
                       <ul className="text-xs text-gray-700 space-y-1">
-                        <li>• Color jitter</li>
-                        <li>• Random grayscale</li>
-                        <li>• Random solarization</li>
-                        <li>• Gaussian blur</li>
+                        <li>• Removed missing values</li>
+                        <li>• Addressed outliers</li>
+                        <li>• Removed duplicates</li>
                       </ul>
                     </div>
                     
                     <div className="bg-gray-50 p-3 rounded-lg">
-                      <h5 className="font-medium text-sm mb-2">Occlusion</h5>
+                      <h5 className="font-medium text-sm mb-2">Feature Engineering</h5>
                       <ul className="text-xs text-gray-700 space-y-1">
-                        <li>• Random erasing</li>
-                        <li>• CutMix</li>
-                        <li>• MixUp</li>
-                        <li>• GridMask</li>
+                        <li>• Created a confusion matrix</li>
+                        <li>• Extracted top features correlating with target</li>
+                        <li>• threshold = 0.3</li>
                       </ul>
                     </div>
                     
                     <div className="bg-gray-50 p-3 rounded-lg">
-                      <h5 className="font-medium text-sm mb-2">Advanced</h5>
+                      <h5 className="font-medium text-sm mb-2">Data</h5>
                       <ul className="text-xs text-gray-700 space-y-1">
-                        <li>• StyleMix</li>
-                        <li>• AdaIN</li>
-                        <li>• RandAugment</li>
-                        <li>• AutoAugment</li>
+                        <li>• Min max scaling</li>
+                        <li>• Label encoding</li>
+                        <li>• Split in train, val and test - 70%, 15%, 15%</li>
                       </ul>
-                    </div>
-                  </div>
-                  
-                  <h4 className="font-semibold mt-6 mb-3">Training Progress</h4>
-                  <div className="h-48 bg-gray-50 rounded-lg p-2 flex items-center justify-center">
-                    <div className="w-full h-full relative">
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <p className="text-gray-400 text-sm">Learning curve visualization</p>
-                      </div>
                     </div>
                   </div>
                 </CardContent>
@@ -230,28 +203,45 @@ def extract_features(image):
                   <div>
                     <h4 className="font-semibold mb-3">Benchmark Datasets</h4>
                     <p className="text-gray-700 mb-4">
-                      We evaluated our approach on multiple standard benchmark datasets to ensure comprehensive assessment:
+                      Our approach was evaluated using a publicly available network intrusion dataset to ensure a fair and comprehensive assessment.
                     </p>
                     
                     <div className="space-y-3">
                       <div className="bg-gray-50 p-3 rounded-lg">
-                        <h5 className="font-medium text-sm">Oxford5K</h5>
-                        <p className="text-xs text-gray-600">5,062 images of Oxford landmarks with 55 query images</p>
+                        <h5 className="font-medium text-sm">Logistic Regression</h5>
+                        <p className="text-xs text-gray-600">Linear baseline classifier</p>
+                      </div>
+
+                      <div className="bg-gray-50 p-3 rounded-lg">
+                        <h5 className="font-medium text-sm">Nearest Centroid Classifier</h5>
+                        <p className="text-xs text-gray-600">Finds nearest centroid and classify</p>
                       </div>
                       
                       <div className="bg-gray-50 p-3 rounded-lg">
-                        <h5 className="font-medium text-sm">Paris6K</h5>
-                        <p className="text-xs text-gray-600">6,412 images of Paris landmarks with 70 query images</p>
+                        <h5 className="font-medium text-sm">Decision Tree</h5>
+                        <p className="text-xs text-gray-600">Rule-based flow model</p>
                       </div>
                       
                       <div className="bg-gray-50 p-3 rounded-lg">
-                        <h5 className="font-medium text-sm">ROxford5K & RParis6K</h5>
-                        <p className="text-xs text-gray-600">Revisited versions with more challenging protocols</p>
+                        <h5 className="font-medium text-sm">Random Forest</h5>
+                        <p className="text-xs text-gray-600">Ensemble of Decision Trees</p>
                       </div>
                       
                       <div className="bg-gray-50 p-3 rounded-lg">
-                        <h5 className="font-medium text-sm">INSTRE</h5>
-                        <p className="text-xs text-gray-600">Small objects dataset with 28,543 images and 250 object classes</p>
+                        <h5 className="font-medium text-sm">Naive Bayes</h5>
+                        <p className="text-xs text-gray-600"> Probabilistic feature-based model</p>
+                      </div>
+                      <div className="bg-gray-50 p-3 rounded-lg">
+                        <h5 className="font-medium text-sm">LDA</h5>
+                        <p className="text-xs text-gray-600"> Linear class separator</p>
+                      </div>
+                      <div className="bg-gray-50 p-3 rounded-lg">
+                        <h5 className="font-medium text-sm">Single-Layer Perceptron</h5>
+                        <p className="text-xs text-gray-600"> Basic neural unit</p>
+                      </div>
+                      <div className="bg-gray-50 p-3 rounded-lg">
+                        <h5 className="font-medium text-sm">Multi-Layer Perceptron</h5>
+                        <p className="text-xs text-gray-600"> Deep neural network</p>
                       </div>
                     </div>
                   </div>
@@ -264,24 +254,30 @@ def extract_features(image):
                     
                     <div className="space-y-3">
                       <div className="bg-gray-50 p-3 rounded-lg">
-                        <h5 className="font-medium text-sm">mAP (mean Average Precision)</h5>
-                        <p className="text-xs text-gray-600">Area under the precision-recall curve, averaged across all queries</p>
+                        <h5 className="font-medium text-sm">Accuracy</h5>
+                        <p className="text-xs text-gray-600">Overall proportion of correctly classified instances.</p>
                       </div>
                       
                       <div className="bg-gray-50 p-3 rounded-lg">
-                        <h5 className="font-medium text-sm">Precision@k</h5>
-                        <p className="text-xs text-gray-600">Precision of top k retrieved results (k = 1, 5, 10)</p>
+                        <h5 className="font-medium text-sm">Precision, Recall, and F1-Score</h5>
+                        <p className="text-xs text-gray-600">Captures the balance between false positives and false negatives.</p>
                       </div>
                       
                       <div className="bg-gray-50 p-3 rounded-lg">
-                        <h5 className="font-medium text-sm">Recall@k</h5>
-                        <p className="text-xs text-gray-600">Recall of top k retrieved results (k = 10, 100, 1000)</p>
+                        <h5 className="font-medium text-sm">Confusion Matrix</h5>
+                        <p className="text-xs text-gray-600">Visual representation of classification performance across all classes.</p>
                       </div>
                       
                       <div className="bg-gray-50 p-3 rounded-lg">
-                        <h5 className="font-medium text-sm">Query Time</h5>
-                        <p className="text-xs text-gray-600">Average time to retrieve results from the database</p>
+                        <h5 className="font-medium text-sm">ROC Curve</h5>
+                        <p className="text-xs text-gray-600">Evaluates the model’s ability to distinguish between classes across thresholds.</p>
                       </div>
+
+                      <div className="bg-gray-50 p-3 rounded-lg">
+                        <h5 className="font-medium text-sm">Precision-Recall Curve</h5>
+                        <p className="text-xs text-gray-600">Highlights performance under class imbalance conditions.</p>
+                      </div>
+
                     </div>
                   </div>
                 </div>
@@ -292,47 +288,70 @@ def extract_features(image):
                     <thead>
                       <tr className="bg-gray-50">
                         <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Method</th>
-                        <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Oxford5K<br/>mAP</th>
-                        <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Paris6K<br/>mAP</th>
-                        <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider border-b">ROxford<br/>Medium</th>
-                        <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider border-b">ROxford<br/>Hard</th>
+                        <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Accuracy</th>
+                        <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Precision</th>
+                        <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Recall</th>
+                        <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider border-b">F1-Score</th>
                       </tr>
                     </thead>
                     <tbody className="bg-white divide-y divide-gray-200">
                       <tr>
-                        <td className="px-4 py-3 text-sm font-medium text-gray-900">SIFT + BoW</td>
-                        <td className="px-4 py-3 text-sm text-center text-gray-500">55.7</td>
-                        <td className="px-4 py-3 text-sm text-center text-gray-500">59.9</td>
-                        <td className="px-4 py-3 text-sm text-center text-gray-500">36.1</td>
-                        <td className="px-4 py-3 text-sm text-center text-gray-500">17.5</td>
+                        <td className="px-4 py-3 text-sm font-medium text-gray-900">Logistic Regression</td>
+                        <td className="px-4 py-3 text-sm text-center text-gray-500">94.19</td>
+                        <td className="px-4 py-3 text-sm text-center text-gray-500">93.95</td>
+                        <td className="px-4 py-3 text-sm text-center text-gray-500">93.94</td>
+                        <td className="px-4 py-3 text-sm text-center text-gray-500">93.94</td>
                       </tr>
                       <tr>
-                        <td className="px-4 py-3 text-sm font-medium text-gray-900">CNN (ResNet-101)</td>
-                        <td className="px-4 py-3 text-sm text-center text-gray-500">78.9</td>
-                        <td className="px-4 py-3 text-sm text-center text-gray-500">82.4</td>
-                        <td className="px-4 py-3 text-sm text-center text-gray-500">63.2</td>
-                        <td className="px-4 py-3 text-sm text-center text-gray-500">36.8</td>
+                        <td className="px-4 py-3 text-sm font-medium text-gray-900">Nearest Centroid Classifier</td>
+                        <td className="px-4 py-3 text-sm text-center text-gray-500">84.57</td>
+                        <td className="px-4 py-3 text-sm text-center text-gray-500">90.07</td>
+                        <td className="px-4 py-3 text-sm text-center text-gray-500">76.23</td>
+                        <td className="px-4 py-3 text-sm text-center text-gray-500">82.58</td>
                       </tr>
                       <tr>
-                        <td className="px-4 py-3 text-sm font-medium text-gray-900">DELF</td>
-                        <td className="px-4 py-3 text-sm text-center text-gray-500">83.8</td>
-                        <td className="px-4 py-3 text-sm text-center text-gray-500">85.0</td>
-                        <td className="px-4 py-3 text-sm text-center text-gray-500">67.8</td>
-                        <td className="px-4 py-3 text-sm text-center text-gray-500">43.1</td>
+                        <td className="px-4 py-3 text-sm font-medium text-gray-900">Decision Tree</td>
+                        <td className="px-4 py-3 text-sm text-center text-gray-500">96.79</td>
+                        <td className="px-4 py-3 text-sm text-center text-gray-500">97.44</td>
+                        <td className="px-4 py-3 text-sm text-center text-gray-500">95.82</td>
+                        <td className="px-4 py-3 text-sm text-center text-gray-500">96.62</td>
+                        
                       </tr>
                       <tr>
-                        <td className="px-4 py-3 text-sm font-medium text-gray-900">GeM</td>
-                        <td className="px-4 py-3 text-sm text-center text-gray-500">87.8</td>
-                        <td className="px-4 py-3 text-sm text-center text-gray-500">87.3</td>
-                        <td className="px-4 py-3 text-sm text-center text-gray-500">69.8</td>
-                        <td className="px-4 py-3 text-sm text-center text-gray-500">47.6</td>
+                        <td className="px-4 py-3 text-sm font-medium text-gray-900">Random Forest</td>
+                        <td className="px-4 py-3 text-sm text-center text-gray-500">97.75</td>
+                        <td className="px-4 py-3 text-sm text-center text-gray-500">98.24</td>
+                        <td className="px-4 py-3 text-sm text-center text-gray-500">97.06</td>
+                        <td className="px-4 py-3 text-sm text-center text-gray-500">97.65</td>
+                      </tr>
+                      <tr>
+                        <td className="px-4 py-3 text-sm font-medium text-gray-900">LDA</td>
+                        <td className="px-4 py-3 text-sm text-center text-gray-500">93.32</td>
+                        <td className="px-4 py-3 text-sm text-center text-gray-500">94.50</td>
+                        <td className="px-4 py-3 text-sm text-center text-gray-500">91.14</td>
+                        <td className="px-4 py-3 text-sm text-center text-gray-500">92.29</td>
+                      </tr>
+                      <tr>
+                        <td className="px-4 py-3 text-sm font-medium text-gray-900">Naive Bayes</td>
+                        <td className="px-4 py-3 text-sm text-center text-gray-500">90.45</td>
+                        <td className="px-4 py-3 text-sm text-center text-gray-500">97.37</td>
+                        <td className="px-4 py-3 text-sm text-center text-gray-500">82.23</td>
+                        <td className="px-4 py-3 text-sm text-center text-gray-500">89.22</td>
+                      </tr>
+                      <tr>
+                        <td className="px-4 py-3 text-sm font-medium text-gray-900">Single Layer Perceptron</td>
+                        <td className="px-4 py-3 text-sm text-center text-gray-500">89.00</td>
+                        <td className="px-4 py-3 text-sm text-center text-gray-500">82.00</td>
+                        <td className="px-4 py-3 text-sm text-center text-gray-500">99.00</td>
+                        <td className="px-4 py-3 text-sm text-center text-gray-500">90.00</td>
                       </tr>
                       <tr className="bg-theme-lightBlue/30">
-                        <td className="px-4 py-3 text-sm font-bold text-theme-blue">IntelliVision (Ours)</td>
-                        <td className="px-4 py-3 text-sm text-center font-bold text-theme-blue">92.3</td>
-                        <td className="px-4 py-3 text-sm text-center font-bold text-theme-blue">93.1</td>
-                        <td className="px-4 py-3 text-sm text-center font-bold text-theme-blue">76.5</td>
-                        <td className="px-4 py-3 text-sm text-center font-bold text-theme-blue">54.7</td>
+                        <td className="px-4 py-3 text-sm font-bold text-theme-blue">Multi Layer Perceptron</td>
+                        <td className="px-4 py-3 text-sm text-center font-bold text-theme-blue">99.69</td>
+                        <td className="px-4 py-3 text-sm text-center font-bold text-theme-blue">99.40</td>
+                        <td className="px-4 py-3 text-sm text-center font-bold text-theme-blue">99.74</td>
+                        <td className="px-4 py-3 text-sm text-center font-bold text-theme-blue">99.57</td>
+                        
                       </tr>
                     </tbody>
                   </table>

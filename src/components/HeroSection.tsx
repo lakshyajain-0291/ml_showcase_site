@@ -10,16 +10,15 @@ const HeroSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="animate-fade-in">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              <span className="gradient-text">IntelliVision</span>: Advanced ML for Computer Vision
+              <span className="gradient-text">NIDS</span>: Advanced ML for Network Intrusion Detection
             </h1>
             <p className="text-lg md:text-xl text-gray-700 mb-8">
-              A novel machine learning approach to content-based image retrieval using transformer models for efficient visual feature extraction.
-            </p>
+              Leveraging advanced classification algorithms and live packet inspection to proactively identify malicious activities on a network.            </p>
             <div className="flex flex-wrap gap-4">
-              <Button className="bg-theme-blue hover:bg-theme-darkBlue">
+              <Button className="bg-theme-blue hover:bg-theme-darkBlue"  onClick={() => window.location.href = 'https://drive.google.com/file/d/1qLTRAscNorWcRLni7awWf6N4fko7jUcs/view?usp=sharing'}>
                 Read Paper <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
-              <Button variant="outline" className="border-theme-blue text-theme-blue hover:bg-theme-lightBlue">
+              <Button variant="outline" className="border-theme-blue text-theme-blue hover:bg-theme-lightBlue" onClick={() => window.location.href = 'https://youtu.be/LEUYgy50xXA'}>
                 View Demo
               </Button>
             </div>
@@ -37,7 +36,7 @@ const HeroSection = () => {
               <div className="absolute -bottom-4 -right-4 bg-white p-3 rounded-lg shadow-lg border border-gray-100">
                 <div className="flex items-center gap-2">
                   <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                  <span className="text-sm font-medium">98.7% Accuracy</span>
+                  <span className="text-sm font-medium">99.7% Accuracy</span>
                 </div>
               </div>
             </div>

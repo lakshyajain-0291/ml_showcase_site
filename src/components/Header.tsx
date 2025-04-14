@@ -28,26 +28,23 @@ const Header = () => {
                 <path d="M18.5 3a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Z"/>
               </svg>
             </div>
-            <span className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">IntelliVision</span>
+            <span className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">NIDS</span>
           </Link>
-          <span className="ml-2 px-2 py-1 bg-blue-100 dark:bg-theme-lightBlue text-xs rounded-md font-semibold text-blue-700 dark:text-blue-300">ML Research Project</span>
+          <span className="ml-2 px-2 py-1 bg-blue-100 dark:bg-theme-lightBlue text-xs rounded-md font-semibold text-blue-700 dark:text-blue-300">PRML Project</span>
         </div>
 
         <nav className="flex items-center space-x-6 text-sm">
           <Link to="/" className={`${isActive("/")} transition-colors duration-200`}>
             Home
           </Link>
-          <Link to="/about" className={`${isActive("/about")} transition-colors duration-200`}>
-            Research
-          </Link>
           <Link to="/team" className={`${isActive("/team")} transition-colors duration-200`}>
             Team
           </Link>
           <Link to="/publications" className={`${isActive("/publications")} transition-colors duration-200`}>
-            Publications
+            Our Work
           </Link>
           <a 
-            href="https://github.com/your-project" 
+            href="https://github.com/Aradhya2708/nids" 
             target="_blank" 
             rel="noopener noreferrer" 
             className="text-gray-700 dark:text-gray-300 hover:text-theme-blue transition-colors duration-200"
@@ -57,7 +54,6 @@ const Header = () => {
               <path d="M9 18c-4.51 2-5-2-7-2"/>
             </svg>
           </a>
-          <ThemeToggle />
         </nav>
       </div>
     </header>

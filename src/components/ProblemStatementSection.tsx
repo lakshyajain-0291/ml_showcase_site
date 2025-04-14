@@ -9,7 +9,7 @@ const ProblemStatementSection = () => {
       <div className="container mx-auto px-4">
         <SectionTitle 
           title="The Problem Statement" 
-          subtitle="Challenges in modern image retrieval systems"
+          subtitle="Challenges in Modern Network Intrusion Detection Systems"
         />
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
@@ -18,24 +18,24 @@ const ProblemStatementSection = () => {
               <CardContent className="p-6 md:p-8">
                 <h3 className="text-xl font-bold mb-4 text-theme-blue">Limitations of Current Approaches</h3>
                 <p className="text-gray-700 mb-4">
-                  Despite significant advances in computer vision and machine learning, content-based image retrieval systems continue to face several key challenges:
+                  Despite significant advancements in machine learning and cybersecurity, network intrusion detection systems (NIDS) still face several critical challenges:
                 </p>
                 <ul className="space-y-3 text-gray-700">
                   <li className="flex items-start">
                     <span className="text-theme-blue mr-2">●</span>
-                    <span><span className="font-medium">Semantic Gap</span>: Difficulty in bridging the gap between low-level visual features and high-level semantic concepts.</span>
+                    <span><span className="font-medium">Adapting to Evolving Threats</span>: Traditional rule-based systems struggle to detect new, unseen attack vectors, leading to high false-negative rates in the face of emerging threats.</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-theme-blue mr-2">●</span>
-                    <span><span className="font-medium">Context Awareness</span>: Limited ability to understand contextual relationships between objects in complex scenes.</span>
+                    <span><span className="font-medium">False Positives</span>: Many existing systems are prone to high false-positive rates, making it difficult for security analysts to effectively respond to real threats without being overwhelmed by alerts.</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-theme-blue mr-2">●</span>
-                    <span><span className="font-medium">Cross-Domain Retrieval</span>: Poor performance when searching across varied visual domains with different characteristics.</span>
+                    <span><span className="font-medium"> Scalability</span>: Achieving fast and accurate predictions for network anomalies in real-time, while balancing high computational efficiency, is difficult in live network environments.</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-theme-blue mr-2">●</span>
-                    <span><span className="font-medium">Computational Efficiency</span>: High computational demands making real-time retrieval challenging for large-scale databases.</span>
+                    <span><span className="font-medium">Real-Time Analysis</span>: High computational demands making real-time retrieval challenging for large-scale databases.</span>
                   </li>
                 </ul>
               </CardContent>
@@ -53,8 +53,8 @@ const ProblemStatementSection = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
                     <div className="p-6">
-                      <span className="bg-white/20 backdrop-blur text-white text-xs px-2 py-1 rounded-full">Image Retrieval Challenge</span>
-                      <h4 className="text-white text-xl mt-2">Distinguishing visually similar but semantically different content</h4>
+                      <span className="bg-white/20 backdrop-blur text-white text-xs px-2 py-1 rounded-full">Intrusion Detection Challenge</span>
+                      <h4 className="text-white text-xl mt-2">Distinguishing statistically similar but behaviorally different network traffic</h4>
                     </div>
                   </div>
                 </div>
@@ -68,27 +68,27 @@ const ProblemStatementSection = () => {
             <CardContent className="p-6 md:p-8">
               <h3 className="text-xl font-bold mb-4 text-theme-blue">Our Research Question</h3>
               <p className="text-gray-700 mb-6">
-                How can we develop a content-based image retrieval system that effectively bridges the semantic gap between low-level visual features and high-level semantic concepts while maintaining computational efficiency suitable for real-world applications?
+                How can we design a machine learning-based intrusion detection system that accurately identifies complex network threats in real time, while maintaining scalability and minimizing false positives for deployment in practical environments?              
               </p>
               
-              <div className="bg-theme-lightBlue p-4 rounded-lg border border-theme-blue/20">
+              <div className="p-4 rounded-lg">
                 <h4 className="font-medium text-theme-darkBlue mb-2">Key Research Objectives</h4>
                 <ul className="space-y-2 text-gray-700">
                   <li className="flex items-start">
                     <span className="text-theme-blue mr-2">1.</span>
-                    <span>Develop a transformer-based feature extraction model optimized for image retrieval tasks.</span>
+                    <span>Compare multiple classical ML models for intrusion detection to identify the most effective approach.</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-theme-blue mr-2">2.</span>
-                    <span>Design a hierarchical attention mechanism to focus on salient image regions.</span>
+                    <span>Integrate the best-performing model into a real-time packet monitoring system for live traffic analysis.</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-theme-blue mr-2">3.</span>
-                    <span>Create an efficient indexing structure for fast retrieval from large-scale databases.</span>
+                    <span>Use evaluation tools such as confusion matrices, ROC and precision-recall curves, and classification reports to ensure robustness and reliability.</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-theme-blue mr-2">4.</span>
-                    <span>Evaluate performance across diverse datasets and real-world scenarios.</span>
+                    <span>Assess system performance across varying network conditions to validate generalizability and readiness for real-world deployment.</span>
                   </li>
                 </ul>
               </div>
@@ -97,45 +97,85 @@ const ProblemStatementSection = () => {
           
           <Card className="paper-shadow">
             <CardContent className="p-6 md:p-8">
-              <h3 className="text-xl font-bold mb-4 text-theme-blue">Metrics of Success</h3>
+              <h3 className="text-xl font-bold mb-4 text-theme-blue">Models Accuracy</h3>
               <div className="space-y-4">
                 <div>
                   <div className="flex justify-between mb-1">
-                    <span className="text-sm font-medium">Precision@10</span>
-                    <span className="text-sm font-medium text-theme-blue">92.3%</span>
+                    <span className="text-sm font-medium">Logistic Regression</span>
+                    <span className="text-sm font-medium text-theme-blue">94.19%</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div className="bg-theme-blue h-2 rounded-full" style={{ width: "92.3%" }}></div>
+                    <div className="bg-theme-blue h-2 rounded-full" style={{ width: "94.19%" }}></div>
+                  </div>
+                </div>
+
+                <div>
+                  <div className="flex justify-between mb-1">
+                    <span className="text-sm font-medium">Nearest Centroid Classifier</span>
+                    <span className="text-sm font-medium text-theme-blue">84.57%</span>
+                  </div>
+                  <div className="w-full bg-gray-200 rounded-full h-2">
+                    <div className="bg-theme-blue h-2 rounded-full" style={{ width: "84.57%" }}></div>
                   </div>
                 </div>
                 
                 <div>
                   <div className="flex justify-between mb-1">
-                    <span className="text-sm font-medium">Mean Average Precision</span>
-                    <span className="text-sm font-medium text-theme-blue">87.5%</span>
+                    <span className="text-sm font-medium">Decision Tree</span>
+                    <span className="text-sm font-medium text-theme-blue">96.79%</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div className="bg-theme-blue h-2 rounded-full" style={{ width: "87.5%" }}></div>
+                    <div className="bg-theme-blue h-2 rounded-full" style={{ width: "96.79%" }}></div>
                   </div>
                 </div>
                 
                 <div>
                   <div className="flex justify-between mb-1">
-                    <span className="text-sm font-medium">Recall@100</span>
-                    <span className="text-sm font-medium text-theme-blue">95.8%</span>
+                    <span className="text-sm font-medium">Random Forest</span>
+                    <span className="text-sm font-medium text-theme-blue">97.75%</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div className="bg-theme-blue h-2 rounded-full" style={{ width: "95.8%" }}></div>
+                    <div className="bg-theme-blue h-2 rounded-full" style={{ width: "97.75%" }}></div>
                   </div>
                 </div>
                 
                 <div>
                   <div className="flex justify-between mb-1">
-                    <span className="text-sm font-medium">Retrieval Speed</span>
-                    <span className="text-sm font-medium text-theme-blue">45ms</span>
+                    <span className="text-sm font-medium">LDA</span>
+                    <span className="text-sm font-medium text-theme-blue">93.32%</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div className="bg-theme-blue h-2 rounded-full" style={{ width: "78%" }}></div>
+                    <div className="bg-theme-blue h-2 rounded-full" style={{ width: "93.32%" }}></div>
+                  </div>
+                </div>
+
+                <div>
+                  <div className="flex justify-between mb-1">
+                    <span className="text-sm font-medium">Naive Bayes</span>
+                    <span className="text-sm font-medium text-theme-blue">90.45%</span>
+                  </div>
+                  <div className="w-full bg-gray-200 rounded-full h-2">
+                    <div className="bg-theme-blue h-2 rounded-full" style={{ width: "90.45%" }}></div>
+                  </div>
+                </div>
+
+                <div>
+                  <div className="flex justify-between mb-1">
+                    <span className="text-sm font-medium">Single Layer Perceptron</span>
+                    <span className="text-sm font-medium text-theme-blue">89.00%</span>
+                  </div>
+                  <div className="w-full bg-gray-200 rounded-full h-2">
+                    <div className="bg-theme-blue h-2 rounded-full" style={{ width: "89.00%" }}></div>
+                  </div>
+                </div>
+
+                <div>
+                  <div className="flex justify-between mb-1">
+                    <span className="text-sm font-medium">Multiple Layer Perceptron</span>
+                    <span className="text-sm font-medium text-theme-blue">99.69%</span>
+                  </div>
+                  <div className="w-full bg-gray-200 rounded-full h-2">
+                    <div className="bg-theme-blue h-2 rounded-full" style={{ width: "99.69%" }}></div>
                   </div>
                 </div>
               </div>
