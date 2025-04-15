@@ -101,7 +101,7 @@ const TeamSection = () => {
       name: "Arpan Jain",
       role: "Model Trainer",
       image: "../../photos/arpan.png?fit=crop&w=800&h=800",
-      bio: "Second Year Undergrad, passionate about Daru, Ganja, CP, Aradhya Mahajan",
+      bio: "Second year undergrad, expert in CP and passionate about Blockchain and Development",
       links: {
         email: "b23cs1089@iitj.ac.in",
         linkedin: "https://www.linkedin.com/in/arpan2048/",
