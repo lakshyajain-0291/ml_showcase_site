@@ -32,7 +32,7 @@ const Publications = () => {
       year: 2025,
       type: "Machine Learning",
       abstract: "We present NIDS, a novel machine learning-based approach to real-time network intrusion detection that leverages a diverse range of classification models for accurate and efficient threat identification.",
-      code: "https://github.com/example/NIDS"
+      code: "https://github.com/Aradhya2708/nids/"
     },
     {
       title: "MPV: Audio reactive Music Player And Visualizer",

@@ -115,7 +115,7 @@ const TeamSection = () => {
       bio: "Second Year Undergrad, and an aspiring back end developer. Passionate about AI and its applications.",
       links: {
         email: "b23cm1015@iitj.ac.in",
-        linkedin: "https://www.linkedin.com/in/divyansh-maheshwari/",
+        linkedin: "https://www.linkedin.com/in/divyansh-maheshwari-832b992a2/",
         github: "https://github.com/divyansh1010x"
       }
     },

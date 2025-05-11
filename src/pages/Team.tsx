@@ -175,7 +175,7 @@ const Team = () => {
       education: "B. Tech in Artifical Intelligence and Data Science, IIT Jodhpur",
       links: {
         email: "b23cm1015@iitj.ac.in",
-        linkedin: "https://www.linkedin.com/in/divyansh-maheshwari/",
+        linkedin: "https://www.linkedin.com/in/divyansh-maheshwari-832b992a2/",
         github: "https://github.com/divyansh1010x"
       }
     },
